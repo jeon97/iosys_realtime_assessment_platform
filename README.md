@@ -92,10 +92,11 @@ RabbitMQ에서 답안, 상태, 로그, 채팅 이벤트를 받아 Redis와 Postg
 - 인증 로직을 각 서비스에 반복하지 않도록 Gateway와 인증 서비스의 역할을 나눴습니다.
 - 운영 데이터가 누락되지 않도록 메시지 발행 실패와 저장 실패 흐름을 별도로 확인했습니다.
 
-자세한 담당 내용은 [기여 내역](docs/CONTRIBUTIONS.md), 설계 과정에서 고민한 내용은 [기술 노트](docs/TECHNICAL-NOTES.md)에 정리했습니다.
+자세한 담당 내용은 [기여 내역](docs/CONTRIBUTIONS.md), 구현 흐름은 [구현 상세](docs/IMPLEMENTATION.md), 전체 연결 관계는 [기능별 구현 근거](docs/FEATURE-MATRIX.md)에 정리했습니다.
 
 ## 샘플 코드
 
 - [이벤트 워커 샘플](samples/event-worker): 중복 이벤트 방지, 상태 저장, 영속화 실패 시 재시도 흐름을 Java 17과 Spring WebFlux로 재구성했습니다.
+- [인증·Gateway 샘플](samples/event-worker/src/main/java/com/portfolio/assessment/eventworker/auth): 토큰 만료, 활성 세션, 공개 경로와 보호 경로 검증을 재구성했습니다.
 
 회사 소스와 운영 데이터는 포함하지 않았습니다. 샘플 코드는 프로젝트에서 다뤘던 기술적 문제를 설명하기 위해 별도로 작성했습니다.
