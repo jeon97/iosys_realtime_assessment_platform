@@ -1,0 +1,34 @@
+# Secrets and local configuration
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+
+# Runtime data
+logs/
+examdata/
+data/
+uploads/
+*.log
+*.zip
+
+# Build outputs
+build/
+target/
+node_modules/
+dist/
+
+# IDE and OS
+.idea/
+.vscode/
+.project
+.classpath
+.settings/
+.DS_Store
+
+# Original VCS metadata must never be copied
+.svn/
