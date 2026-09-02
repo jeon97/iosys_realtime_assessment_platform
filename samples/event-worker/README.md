@@ -26,11 +26,15 @@ flowchart LR
 
 ```text
 src/main/java/com/portfolio/assessment/eventworker
-├── api       HTTP 요청과 응답
-├── domain    이벤트 모델과 타입
-├── service   이벤트 처리 순서
-├── port      외부 저장소 인터페이스
-└── adapter   실행용 메모리 구현체
+├── api        HTTP 요청과 응답
+├── auth       인증 서비스와 Gateway 검증
+├── common     MSA 공통 시험 문맥
+├── examinee   응시자 답안 이벤트 발행과 대체 저장
+├── manager    관리자 시험자료 반입
+├── domain     이벤트 모델과 타입
+├── service    이벤트 처리 순서
+├── port       외부 저장소 인터페이스
+└── adapter    실행용 메모리 구현체
 ```
 
 ## 실행 방법
@@ -68,6 +72,6 @@ curl http://localhost:8080/api/participants/participant-101/state
 mvn test
 ```
 
-테스트에서는 정상 이벤트 처리, 동일 이벤트 재전송, 저장 실패 시 재시도 큐 전환을 확인합니다.
+테스트에서는 이벤트 중복·재시도, 토큰·활성 세션, 답안 발행 장애 대체 저장, 시험자료 반입 검증을 확인합니다.
 
 이 코드는 포트폴리오를 위해 새로 작성했으며 회사 소스나 운영 설정을 포함하지 않습니다.
