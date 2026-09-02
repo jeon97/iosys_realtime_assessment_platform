@@ -92,7 +92,7 @@ RabbitMQ에서 답안, 상태, 로그, 채팅 이벤트를 받아 Redis와 Postg
 - 인증 로직을 각 서비스에 반복하지 않도록 Gateway와 인증 서비스의 역할을 나눴습니다.
 - 운영 데이터가 누락되지 않도록 메시지 발행 실패와 저장 실패 흐름을 별도로 확인했습니다.
 
-서비스별 역할과 본인 구현은 [MSA별 담당 기능](docs/SERVICES.md), 기능과 공개 코드의 연결은 [기능별 구현 근거](docs/FEATURE-MATRIX.md), 처리 흐름은 [구현 상세](docs/IMPLEMENTATION.md)에 정리했습니다.
+서비스별 역할과 본인 구현은 [MSA별 담당 기능](docs/SERVICES.md), 기능과 공개 코드의 연결은 [기능별 구현 근거](docs/FEATURE-MATRIX.md), 처리 흐름은 [구현 상세](docs/IMPLEMENTATION.md)에 정리했습니다. 부하 시험의 기준과 공개 시나리오는 [실시간 평가 부하 시험 설계](docs/PERFORMANCE-TEST.md)에서 확인할 수 있습니다.
 
 ## 샘플 코드
 
