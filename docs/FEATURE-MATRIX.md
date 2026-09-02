@@ -4,6 +4,7 @@
 |---|---|---|---|
 | common | 시험계획·세션·사용자·그룹·답안·로그 공통 계약 | 불변 시험 문맥과 반응형 Repository 경계 | [AssessmentContext](../samples/event-worker/src/main/java/com/portfolio/assessment/eventworker/common/AssessmentContext.java) |
 | examinee | 답안·상태·접속 로그·채팅·카메라 데이터 처리 | 시험 문맥 검증 후 이벤트 발행, 큐 장애 시 DB 대체 저장 | [AnswerSubmissionService](../samples/event-worker/src/main/java/com/portfolio/assessment/eventworker/examinee/AnswerSubmissionService.java) |
+| examinee | 카메라·채팅·이상행위 실시간 이벤트 | 최신 상태와 이력 저장 분리, 이벤트 ID 중복 방지, 큐 장애 대체 저장 | [MonitoringEventService](../samples/event-worker/src/main/java/com/portfolio/assessment/eventworker/examinee/MonitoringEventService.java) |
 | manager | 계획·패키지·사용자 파일 반입, 동기화, Redis 관리 | ZIP 경로와 필수 JSON 검증 후 일괄 저장 | [PlanArchiveImporter](../samples/event-worker/src/main/java/com/portfolio/assessment/eventworker/manager/PlanArchiveImporter.java) |
 | manager-front | 시험 검색·페이지네이션, Redis 업로드·삭제 | 목록 조건 Store와 명령 실행 후 상세 재조회 | [ExamStore](../samples/manager-ui/examStore.mjs) |
 | security | Access/Refresh Token, 시험 세션, Redis 토큰 상태 | 토큰 해석·만료와 활성 세션 검증 분리 | [SessionTokenService](../samples/event-worker/src/main/java/com/portfolio/assessment/eventworker/auth/SessionTokenService.java) |

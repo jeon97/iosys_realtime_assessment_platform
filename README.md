@@ -99,7 +99,10 @@ RabbitMQ에서 답안, 상태, 로그, 채팅 이벤트를 받아 Redis와 Postg
 - [이벤트 워커 샘플](samples/event-worker): 중복 이벤트 방지, 상태 저장, 영속화 실패 시 재시도 흐름을 Java 17과 Spring WebFlux로 재구성했습니다.
 - [인증·Gateway 샘플](samples/event-worker/src/main/java/com/portfolio/assessment/eventworker/auth): 토큰 만료, 활성 세션, 공개 경로와 보호 경로 검증을 재구성했습니다.
 - [응시자 답안 처리 샘플](samples/event-worker/src/main/java/com/portfolio/assessment/eventworker/examinee): 이벤트 발행과 큐 장애 시 대체 저장을 재구성했습니다.
+- [응시자 실시간 상태 샘플](samples/event-worker/src/main/java/com/portfolio/assessment/eventworker/examinee/MonitoringEventService.java): 카메라·채팅·이상행위 이벤트의 문맥 검증, 중복 방지와 대체 저장을 재구성했습니다.
 - [관리자 시험자료 반입 샘플](samples/event-worker/src/main/java/com/portfolio/assessment/eventworker/manager): ZIP 항목과 필수 JSON 검증 후 일괄 저장을 재구성했습니다.
 - [관리 UI 상태관리 샘플](samples/manager-ui): 검색·페이지 상태와 Redis 작업 후 상세 재조회를 재구성했습니다.
+
+실시간 상태 저장 책임은 [응시자 실시간 상태 처리](docs/EXAMINEE-MONITORING.md)에 별도로 정리했습니다.
 
 회사 소스와 운영 데이터는 포함하지 않았습니다. 샘플 코드는 프로젝트에서 다뤘던 기술적 문제를 설명하기 위해 별도로 작성했습니다.
