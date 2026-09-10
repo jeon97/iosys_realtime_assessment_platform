@@ -15,10 +15,10 @@
 
 ## 구현 방식
 
-목록 조건과 페이지 상태를 Store에 모아 화면 이동 후에도 동일 조건을 유지하도록 구성했습니다. Redis 작업은 상세 Store의 명령으로 분리하고 성공 후 상세 상태를 다시 조회하도록 했습니다.
+목록 조건과 페이지 상태를 Store에 모아 화면 이동 후에도 동일 조건을 유지하도록 구성하였습니다. Redis 작업은 상세 Store의 명령으로 분리하고 성공 후 상세 상태를 다시 조회하도록 하였습니다.
 
 ## 공개 예제
 
-- [examStore.mjs](../../samples/manager-ui/examStore.mjs): 검색·페이지 상태와 Redis 명령 후 재조회 흐름을 프레임워크 독립 코드로 재작성했습니다.
+- [examStore.mjs](../../samples/manager-ui/examStore.mjs): 검색·페이지 상태와 Redis 명령 후 재조회 흐름을 프레임워크 독립 코드로 재작성하였습니다.
 - [examStore.test.mjs](../../samples/manager-ui/examStore.test.mjs): 조건 변경, 페이지 초기화, 작업 후 재조회를 검증합니다.
 

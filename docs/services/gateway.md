@@ -22,5 +22,5 @@
 
 ## 공개 예제
 
-- [GatewayAuthorizationService](../../samples/event-worker/src/main/java/com/portfolio/assessment/eventworker/auth/GatewayAuthorizationService.java): 공개 경로, Bearer Token, 사용자·시험 문맥 전달을 구현했습니다.
+- [GatewayAuthorizationService](../../samples/event-worker/src/main/java/com/portfolio/assessment/eventworker/auth/GatewayAuthorizationService.java): 공개 경로, Bearer Token, 사용자·시험 문맥 전달을 구현하였습니다.
 

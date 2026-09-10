@@ -21,12 +21,12 @@
 
 ## 구현 방식
 
-Controller는 입력과 토큰 식별정보를 Service에 전달하고, Service가 사용자·시험계획 일치 여부를 검증합니다. 답안·로그·상태는 RabbitMQ 이벤트로 발행해 요청 응답과 저장 작업을 분리했습니다.
+Controller는 입력과 토큰 식별정보를 Service에 전달하고, Service가 사용자·시험계획 일치 여부를 검증합니다. 답안·로그·상태는 RabbitMQ 이벤트로 발행해 요청 응답과 저장 작업을 분리하였습니다.
 
 메시지 큐를 사용할 수 없을 때 데이터가 사라지지 않도록 영속 저장소 대체 경로를 두었습니다. 답안 요청 구조가 변경될 때는 현재 답안뿐 아니라 풀이 문항과 사용자 시험 상태가 같은 데이터 블록에서 처리되도록 맞췄습니다.
 
 ## 공개 예제
 
-- [AnswerSubmissionService](../../samples/event-worker/src/main/java/com/portfolio/assessment/eventworker/examinee/AnswerSubmissionService.java): 사용자·시험 식별정보 검증, 이벤트 발행, 발행 실패 시 저장 대체 경로를 구현했습니다.
+- [AnswerSubmissionService](../../samples/event-worker/src/main/java/com/portfolio/assessment/eventworker/examinee/AnswerSubmissionService.java): 사용자·시험 식별정보 검증, 이벤트 발행, 발행 실패 시 저장 대체 경로를 구현하였습니다.
 - [AnswerSubmissionServiceTest](../../samples/event-worker/src/test/java/com/portfolio/assessment/eventworker/examinee/AnswerSubmissionServiceTest.java): 정상 발행, 잘못된 사용자, 큐 장애 대체 저장을 검증합니다.
 
