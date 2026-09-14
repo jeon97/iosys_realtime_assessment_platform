@@ -4,7 +4,7 @@
 
 응시자가 시험에 접속한 이후 사용하는 조회·저장 API와 실시간 이벤트 발행을 담당합니다.
 
-## 내가 개발한 기능
+## 담당 기능
 
 - 토큰 정보 기반 응시자·시험계획·시험지·문항 조회
 - 시험계획 JSON의 문자열 필드를 목록 구조로 변환
@@ -29,4 +29,3 @@ Controller는 입력과 토큰 식별정보를 Service에 전달하고, Service�
 
 - [AnswerSubmissionService](../../samples/event-worker/src/main/java/com/portfolio/assessment/eventworker/examinee/AnswerSubmissionService.java): 사용자·시험 식별정보 검증, 이벤트 발행, 발행 실패 시 저장 대체 경로를 구현하였습니다.
 - [AnswerSubmissionServiceTest](../../samples/event-worker/src/test/java/com/portfolio/assessment/eventworker/examinee/AnswerSubmissionServiceTest.java): 정상 발행, 잘못된 사용자, 큐 장애 대체 저장을 검증합니다.
-

@@ -4,7 +4,7 @@
 
 RabbitMQ에서 답안·상태·로그·채팅·부정행위 이벤트를 소비해 Redis와 PostgreSQL에 반영합니다.
 
-## 내가 개발한 기능
+## 담당 기능
 
 - 답안 이벤트 소비와 DB 저장
 - 답안의 Redis 실시간 조회 구조 저장
@@ -19,10 +19,11 @@ RabbitMQ에서 답안·상태·로그·채팅·부정행위 이벤트를 소비�
 
 ## 구현 방식
 
-이벤트 종류마다 Consumer와 저장 Service를 분리하였습니다. 빠른 조회가 필요한 현재 상태는 Redis에, 보존이 필요한 답안·로그는 DB에 반영하였습니다. 일부 저장이 실패했을 때 재처리할 수 있도록 이벤트 ID를 기준으로 중복 처리를 방지하는 구조가 필요합니다.
+이벤트 종류마다 Consumer와 저장 Service를 분리하였습니다. 빠른 조회가 필요한 현재 상태는 Redis에, 보존이 필요한 답안·로그는 DB에 반영하였습니다. Redis 반영 시도 후 DB 저장을 실행하도록 처리 순서를 조정하였습니다.
 
-## 공개 예제
+## 코드 예제
+
+EventProcessor의 이벤트 ID 중복 검사와 실패 큐는 예제의 추가 규칙입니다.
 
 - [EventProcessor](../../samples/event-worker/src/main/java/com/portfolio/assessment/eventworker/service/EventProcessor.java): 중복 검사, 상태 반영, 영속 저장, 실패 큐 이동을 구현하였습니다.
 - [EventProcessorTest](../../samples/event-worker/src/test/java/com/portfolio/assessment/eventworker/service/EventProcessorTest.java): 정상 처리, 중복 이벤트, 저장 실패를 검증합니다.
-

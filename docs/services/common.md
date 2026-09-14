@@ -4,7 +4,7 @@
 
 여러 MSA가 동일한 시험 데이터 구조와 반응형 Repository 계약을 사용하도록 제공하는 공통 라이브러리입니다.
 
-## 내가 개발한 기능
+## 담당 기능
 
 - 시험계획, 시험 세션, 사용자, 그룹·그룹원 모델
 - 답안, 사용자별 시험, 진행 상태, 단계 진행 모델
@@ -23,6 +23,5 @@
 
 ## 공개 예제
 
-- [AssessmentContext](../../samples/event-worker/src/main/java/com/portfolio/assessment/eventworker/common/AssessmentContext.java): 서비스 사이에서 전달하는 시험 식별정보를 불변 객체로 재작성하였습니다.
+- [AssessmentContext](../../samples/event-worker/src/main/java/com/portfolio/assessment/eventworker/common/AssessmentContext.java): 서비스 사이에서 전달하는 시험 식별정보의 불변 객체 예제입니다.
 - [AssessmentEvent](../../samples/event-worker/src/main/java/com/portfolio/assessment/eventworker/domain/AssessmentEvent.java): 워커가 사용하는 공통 이벤트 계약 예제입니다.
-

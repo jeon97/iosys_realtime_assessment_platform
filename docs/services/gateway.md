@@ -4,7 +4,7 @@
 
 외부 요청의 단일 진입점으로서 인증을 검사하고 응시자·관리자·인증·실시간 서비스로 라우팅합니다.
 
-## 내가 개발한 기능
+## 담당 기능
 
 - Spring Cloud Gateway 기본 구성
 - UI와 API 경로별 서비스 라우팅
@@ -23,4 +23,3 @@
 ## 공개 예제
 
 - [GatewayAuthorizationService](../../samples/event-worker/src/main/java/com/portfolio/assessment/eventworker/auth/GatewayAuthorizationService.java): 공개 경로, Bearer Token, 사용자·시험 문맥 전달을 구현하였습니다.
-

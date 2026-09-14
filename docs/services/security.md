@@ -4,7 +4,7 @@
 
 사용자 로그인, JWT 발급·갱신·검증과 Redis 기반 활성 세션을 관리합니다.
 
-## 내가 개발한 기능
+## 담당 기능
 
 - Access Token과 Refresh Token 발급
 - 토큰 서명키의 외부 설정 분리
@@ -25,4 +25,3 @@
 
 - [SessionTokenService](../../samples/event-worker/src/main/java/com/portfolio/assessment/eventworker/auth/SessionTokenService.java): 토큰 만료와 활성 세션을 함께 검증합니다.
 - [SessionTokenServiceTest](../../samples/event-worker/src/test/java/com/portfolio/assessment/eventworker/auth/SessionTokenServiceTest.java): 정상·만료·비활성 세션을 검증합니다.
-

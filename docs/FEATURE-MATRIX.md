@@ -1,6 +1,6 @@
-# 담당 기능과 공개 코드
+# 기능별 코드
 
-표의 코드에는 공개용 추가 검증·상태 규칙이 포함됩니다. 원본 적용 여부는 [근거와 구분](SOURCE-SCOPE.md)에 명시하였습니다.
+업무별 코드 예제입니다. 예제의 추가 규칙은 [예제 안내](SAMPLE-NOTES.md)에 있습니다.
 
 | MSA | 담당 업무 주제 | 공개 예제의 구성 | 공개 예제 |
 |---|---|---|---|
@@ -12,18 +12,13 @@
 | security | Access/Refresh Token, 시험 세션, Redis 토큰 상태 | 토큰 해석·만료와 활성 세션 검증 분리 | [SessionTokenService](../samples/event-worker/src/main/java/com/portfolio/assessment/eventworker/auth/SessionTokenService.java) |
 | worker | 답안·상태·로그·채팅 이벤트 소비 | 이벤트 ID 중복 검사, 상태 갱신, 영속화, 실패 큐 저장 | [EventProcessor](../samples/event-worker/src/main/java/com/portfolio/assessment/eventworker/service/EventProcessor.java) |
 | gateway | JWT 필터, 서비스 라우팅, SSE·CORS | 공개 경로 판정 후 보호 경로의 토큰·세션 확인 | [GatewayAuthorizationService](../samples/event-worker/src/main/java/com/portfolio/assessment/eventworker/auth/GatewayAuthorizationService.java) |
-| websocket | 공통 라이브러리 버전과 환경 설정 정리 | 기능 개발 기여는 근거 부족으로 제외 | [서비스 문서](services/websocket.md) |
-| monitor | 감독관 모니터링 구성요소 | 본인 커밋 없음 | [서비스 문서](services/monitor.md) |
-| proctor | 감독관 업무 구성요소 | 본인 커밋 없음 | [서비스 문서](services/proctor.md) |
+| websocket | 공통 라이브러리 버전과 환경 설정 정리 | 공통 버전·환경 설정 변경 | [서비스 문서](services/websocket.md) |
 
-회사 소스의 클래스명과 설정은 사용하지 않았으며, 공개 예제는 담당 기능의 처리 구조만 새로 작성한 코드입니다.
-
-
-## 원본 처리 흐름을 확인한 추가 사례
+## 구현 사례
 
 - [시험 설정 JSON의 이중 직렬화 처리](../samples/event-worker/src/main/java/com/portfolio/assessment/eventworker/cases/SettingsListReader.java)
 - [중첩 답안 요청에서 현재·이전 문항 분리](../samples/event-worker/src/main/java/com/portfolio/assessment/eventworker/cases/AnswerEnvelopeReader.java)
 - [캐시 반영 시도 후 영속 저장 순서 구성](../samples/event-worker/src/main/java/com/portfolio/assessment/eventworker/cases/CacheThenDatabase.java)
 - [최신 활동 로그의 개수 제한과 만료 처리](../samples/event-worker/src/main/java/com/portfolio/assessment/eventworker/cases/RecentLogWriter.java)
 
-입력·결과와 검증 범위는 [구현 사례 상세](CASE-STUDIES.md)에 정리하였습니다.
+[처리 과정·입출력·테스트](CASE-STUDIES.md)

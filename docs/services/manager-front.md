@@ -4,7 +4,7 @@
 
 운영자가 시험계획 목록과 상세 상태를 확인하고 시험 데이터를 Redis에 준비하거나 제거하는 React 기반 화면입니다.
 
-## 내가 개발한 기능
+## 담당 기능
 
 - 시험 목록의 페이지네이션과 검색 조건 상태관리
 - 시험 상세정보 Store 구성
@@ -19,6 +19,5 @@
 
 ## 공개 예제
 
-- [examStore.mjs](../../samples/manager-ui/examStore.mjs): 검색·페이지 상태와 Redis 명령 후 재조회 흐름을 프레임워크 독립 코드로 재작성하였습니다.
+- [examStore.mjs](../../samples/manager-ui/examStore.mjs): 검색·페이지 상태와 Redis 명령 후 재조회를 처리하는 함수입니다.
 - [examStore.test.mjs](../../samples/manager-ui/examStore.test.mjs): 조건 변경, 페이지 초기화, 작업 후 재조회를 검증합니다.
-
